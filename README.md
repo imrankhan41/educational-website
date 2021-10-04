@@ -1,5 +1,5 @@
 # Educational Website
-Click the link to see website[Link to Netlify ](https://practical-agnesi-1f83b7.netlify.app/home)
+Click the link to see website[Link to Netlify ](https://educational-website-react.netlify.app/home)
 
 - Using Javascript react,pure css,JSX for making this website,Github used for code repository & netlify for hosting
 - This website has made for the people who want to learn in different sector
