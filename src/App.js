@@ -13,6 +13,7 @@ import Contact from './components/Contact/Contact';
 
 function App() {
   return (
+    // component,router,route,switch creation
     <div className="App">
       <BrowserRouter>
       <Header></Header>

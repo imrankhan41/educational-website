@@ -4,11 +4,31 @@ import Product from '../Product/Product';
 
 
 const Home = () => {
+  
     const [courses,setCourses]=useState([]);
+    const [sciences,setSciences]=useState([]);
+    const [marketing,setMarketing]=useState([]);
+    const [photography,setPhotography]=useState([]);
+    
     useEffect(()=>{
         fetch("./development.JSON")
         .then(res=>res.json())
-        .then(data => setCourses(data.slice(1,5)))
+        .then(data => setCourses(data.slice(1,2)))
+    },[])
+    useEffect(()=>{
+        fetch("./development.JSON")
+        .then(res=>res.json())
+        .then(data => setSciences(data.slice(2,3)))
+    },[])
+    useEffect(()=>{
+        fetch("./development.JSON")
+        .then(res=>res.json())
+        .then(data => setMarketing(data.slice(8,9)))
+    },[])
+    useEffect(()=>{
+        fetch("./development.JSON")
+        .then(res=>res.json())
+        .then(data => setPhotography(data.slice(15,16)))
     },[])
     return (
         <div className="container">
@@ -20,7 +40,7 @@ const Home = () => {
                     src="https://www.designer.io/wp-content/uploads/2020/10/Education-header.png"
                     alt="First slide"
                     />
-                    <Carousel.Caption>
+                    <Carousel.Caption className="text-dark">
                     <h3>Come To Learn</h3>
                     <p>This is an educational website</p>
                     </Carousel.Caption>
@@ -32,7 +52,7 @@ const Home = () => {
                     alt="Second slide"
                     />
 
-                    <Carousel.Caption>
+                    <Carousel.Caption className="text-dark">
                     <h3>We Are Ready To Teach You</h3>
                     <p>All the highly qualified teachers are ready for you</p>
                     </Carousel.Caption>
@@ -44,7 +64,7 @@ const Home = () => {
                     alt="Third slide"
                     />
 
-                    <Carousel.Caption>
+                    <Carousel.Caption className="text-dark">
                     <h3>What Are You Thinking?</h3>
                     <p>Just Share with us and we all provide solution</p>
                     </Carousel.Caption>
@@ -53,17 +73,50 @@ const Home = () => {
             </div>
           
                <div className="row">
-                   <div className="mt-5">
-                  <h1>Machine Learning</h1>
+               <h1 className="mt-5">Machine Learning:</h1>
+                   <div className="mt-5 border border-warning bg-info">
+                
                    {
                     courses.map(course=><Product
                         key={course.name}
                         course={course}></Product>)
                 }
                    </div>
-                   
+                </div>
+               <div className="row">
+               <h1 className="mt-5">Data Science:</h1>
+                   <div className="mt-5 border border-warning bg-info">
+                 
+                   {
+                    sciences.map(course=><Product
+                        key={course.name}
+                        course={course}></Product>)
+                }
+                   </div> 
                </div>
-        </div>
+               <div className="row">
+               <h1 className="mt-5">Digital Marketing:</h1>
+                   <div className="mt-5 border border-warning bg-info">
+                  
+                   {
+                    marketing.map(course=><Product
+                        key={course.name}
+                        course={course}></Product>)
+                }
+                   </div> 
+               </div>
+               <div className="mb-5 row">
+               <h1 className="mt-5">Photography :</h1>
+                   <div className="mt-5 border border-warning bg-info ">
+                  
+                   {
+                    photography.map(course=><Product
+                        key={course.name}
+                        course={course}></Product>)
+                }
+                   </div> 
+               </div>
+       </div>
     );
 };
 
