@@ -1,0 +1,18 @@
+.footer-two{
+    display: flex;
+    background-color: aqua;
+   
+}
+.footer-two-first{
+    margin-right: 250px;
+    margin-left: 300px;
+}
+.footer-two .footer-two-side{
+   display: flex;
+   margin-left: 50px; 
+   color:black;
+   text-decoration: none;
+}
+.footer-style{
+    display: flex;
+}
